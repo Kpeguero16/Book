@@ -14,7 +14,7 @@ public class Book
 
     public String toString() 
     {
-        return "You can finish " + nameOfBook + " in " + numberOfDays + " days if you read " + ((int)Math.ceil((double)numberOfPages/numberOfDays)) + " pages per day!";
+        return "\nYou can finish " + nameOfBook + " in " + numberOfDays + " days if you read " + ((int)Math.ceil((double)numberOfPages/numberOfDays)) + " pages per day!\n";
     }
 
     
