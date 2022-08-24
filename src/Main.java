@@ -12,15 +12,16 @@ public class Main {
          * ^_^
          */
 
-         System.out.println("\nHi! Welcome to the book calculator ^_^\n");
+        System.out.println("\nHi! Welcome to the book calculator ^_^\n");
 
-        Scanner myObj = new Scanner(System.in);
-            System.out.print("What book do you want to read?\n");
-            String bookInput = myObj.nextLine();
-            System.out.println("\nHow many pages does " + bookInput + " have?");
-            int pages = myObj.nextInt();
-            System.out.println("\nIn how many days do you wish to finish " + bookInput + "?");
-            int days = myObj.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What book do you want to read?\n");
+        String bookInput = scanner.nextLine();
+        System.out.println("\nHow many pages does " + bookInput + " have?");
+        int pages = scanner.nextInt();
+        System.out.println("\nIn how many days do you wish to finish " + bookInput + "?");
+        int days = scanner.nextInt();
+        scanner.close();
             
             Book newBook = new Book(bookInput, pages, days);
             
