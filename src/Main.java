@@ -2,7 +2,10 @@ package src;
 
 import java.awt.Color;
 import java.awt.Font;
-
+import java.io.File;
+import java.io.IOException;
+import java.awt.GraphicsEnvironment;
+import java.awt.FontFormatException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,24 +14,34 @@ import javax.swing.plaf.DimensionUIResource;
 
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
 
+        Font sevillana;
 
-
+        try{
+            // load a custom font in your project folder
+			sevillana = Font.createFont(Font.TRUETYPE_FONT, new File("Sevillana-Regular.ttf")).deriveFont(30f);	
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Sevillana-Regular.ttf")));			
+		}
+		catch(IOException | FontFormatException e){
+			
+		}
 
 
 
         JLabel header = new JLabel();
         header.setText("Book Calculator");
         header.setForeground(new Color(255, 239, 213));
-        header.setFont(new Font("Times New Roman", Font.BOLD, 38));
+        header.setFont(new Font("sevillana", Font.BOLD, 38));
         header.setHorizontalAlignment(JLabel.CENTER);
         header.setVerticalAlignment(JLabel.CENTER);
         header.setBounds(0, 0, 450, 100);
 
         JLabel q1 = new JLabel("Welcome!\nWhat book do you want to read?");
-        q1.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        q1.setFont(new Font("sevillana", Font.PLAIN, 16));
         q1.setForeground(new Color(255, 239, 213));
         q1.setHorizontalAlignment(JLabel.CENTER);
 
@@ -36,7 +49,7 @@ public class Main {
         nameOfBook.setPreferredSize(new DimensionUIResource(250, 30));
         nameOfBook.setBackground(Color.white);
         nameOfBook.setHorizontalAlignment(JLabel.CENTER);
-        nameOfBook.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        nameOfBook.setFont(new Font("sevillana", Font.PLAIN, 16));
         
 
         JPanel panel = new JPanel();
@@ -55,6 +68,8 @@ public class Main {
         frame.getContentPane().setBackground(new Color(70, 130, 180));
         frame.add(panel);
         frame.setVisible(true);
+
+
 
         /*
          * TO-DO:
